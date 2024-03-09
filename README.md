@@ -15,7 +15,7 @@ To run the app locally, follow these steps:
 
 1. Clone the repository to your local machine.
 
-2. Open the repository in VSCode and run the following command in the terminal:
+2. Open the repository in VSCode, go to the root directory and run the following command in the terminal:
 
    ```bash
    docker compose up

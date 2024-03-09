@@ -1,0 +1,38 @@
+# To Display Message
+GET http://localhost:3000/
+
+### To Fetch Movies 
+GET http://localhost:3000/api/movies
+
+### To Insert Movie
+
+POST http://localhost:3000/api/movies
+content-type: application/json
+admin: false
+
+{
+    "title": "Jurrassic World",  
+    "genre": "Adventure",
+    "rating": 5,
+    "streamingLink": "Amazon Streaming"
+}
+
+
+### To Update Movie
+# TODO: Paste the req parameter at id
+PUT http://localhost:3000/api/movies/:id
+content-type: application/json
+admin: true
+
+{
+    "title": "ABCD",  
+    "genre": "Dance",
+    "rating": 7,
+    "streamingLink": "HULU"
+}
+
+### To Delete Movie
+# TODO: Paste the req parameter at id
+
+DELETE http://localhost:3000/api/movies/:id
+admin: true

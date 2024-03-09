@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  # networks:
+  #   - mongo-database
+
+  mongo_db:
+    image: mongo
+    restart: always
+    container_name: mongo_db
+    # environment:
+    #   - MONGO_INITDB_ROOT_USERNAME=root
+    #   - MONGO_INITDB_ROOT_PASSWORD=example
+    volumes:
+      - mongo_data:/data/db
+      # - mongo-data:/data/db
+      # - etc/timezone:/etc/timezone:ro #To grab the timezone details
+    ports:
+      - 27017:27017
+    # networks:
+    #   - mongo-database
+
+  # networks:
+  #   mongo-database:
+  #     driver: bridge
+
+  crud-api:
+    container_name: crud_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo_db
+    environment:
+      MONGO_URI: mongodb://mongo_db:27017/movieDB
+
+volumes:
+  mongo_data: {}

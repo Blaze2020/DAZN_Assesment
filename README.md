@@ -19,3 +19,5 @@ To run the app locally, follow these steps:
 
    ```bash
    docker compose up
+
+3. Use rest.http file to make api calls.
